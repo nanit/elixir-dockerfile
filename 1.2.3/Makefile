@@ -1,3 +1,5 @@
+.PHONEY: onbuild
+
 VERSION=1.2.3
 IMAGE_NAME=nanit/elixir
 
