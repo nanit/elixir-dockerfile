@@ -6,11 +6,11 @@ RUN mkdir -p /usr/app/src
 ENV MIX_ENV prod
 WORKDIR /usr/app/src
 #Cache dependencies
-COPY mix.exs /usr/app/src
-COPY mix.lock /usr/app/src
+ONBUILD COPY mix.exs /usr/app/src
+ONBUILD COPY mix.lock /usr/app/src
 #
-RUN mix deps.get
+ONBUILD RUN mix deps.get
 
-COPY . /usr/app/src
+ONBUILD COPY . /usr/app/src
 
-RUN mix compile
+ONBUILD RUN mix compile
