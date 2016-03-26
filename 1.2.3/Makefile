@@ -8,6 +8,6 @@ base:
 	docker tag $(IMAGE_NAME):$(VERSION) $(IMAGE_NAME):latest && docker push $(IMAGE_NAME):latest
 
 onbuild:
-	docker build -t $(IMAGE_NAME):$(VERSION)-onbuild ./onbuild
+	docker build -t $(IMAGE_NAME):$(VERSION)-onbuild ./onbuild && docker push $(IMAGE_NAME):$(VERSION)-onbuild 
 	docker tag $(IMAGE_NAME):$(VERSION)-onbuild $(IMAGE_NAME):latest-onbuild && docker push $(IMAGE_NAME):latest-onbuild
 
